@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'FancyFont';
+    src: url('../fonts/fancyfont.otf') format('opentype');
+}
+
 * {
     box-sizing: border-box;
 }
@@ -8,28 +13,60 @@ html, body {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Patrick Hand', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     color: #000;
-    background-color: #fff;
+    background-image: url("../images/floral.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
+/* HEADER STYLING */
 .header {
     background-color: #7597E6;
     color: #000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+}
+
+.header__brand {
+    display: flex;
+    align-items: center; 
+}
+
+.header__icon {
+    width: 100px;
+    height: 100px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: block;
+    margin: -0.5rem 0;
 }
 
 .header__title {
     font-size: 1.5rem;
     font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+    font-family: 'FancyFont', Arial, sans-serif;
+}
+
+/* NAVIGATION */
+.nav {
+    margin-left: auto;
+    font-family: 'FancyFont', Arial, sans-serif;
 }
 
 .nav__list {
@@ -37,76 +74,133 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .nav__item {
-
+    font-size: 0.75rem;
 }
 
 .nav__link {
     text-decoration: none;
     color: #000;
     font-weight: 500;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    display: block;
 }
 
 .nav__link:hover {
-    opacity: 0.7;
+    border-bottom-color: #000;
 }
 
 .nav__link--active {
-    border-bottom: 2px solid #fff;
+    border-bottom-color: #fff;
+    font-weight: 600;
 }
 
+/* MAIN CONTENT */
 .main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
     padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Generic Section Styles */
+.hero,
+.about,
+.schedule {
+    padding: 1rem 2rem;
+    text-align: left;
+    border-radius: 8px;
 }
 
 .hero {
     background-color: #7597E6;
     color: white;
-    text-align: left;
-    padding: 5rem 2rem;
-    border-radius: 8px;
 }
 
-.hero__title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero__text {
-    font-size: 1.2rem;
-}
-
-.about {
+.about,
+.schedule {
     background-color: #f4f6f9;
-    padding: 4rem 2rem;
-    text-align: left;
-    border-radius: 8px;
 }
 
-.about__title {
-    font-size: 2rem;
+/* Generic Container */
+.hero__container,
+.about__container,
+.schedule__container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Generic Titles */
+.hero__title,
+.about__title,
+.schedule__title {
     margin-bottom: 1rem;
+    font-size: 2rem;
+    font-family: 'FancyFont', Arial, sans-serif;
 }
 
+.hero__text,
 .about__text {
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
 }
 
-.footer {
-    background-color: #7597E6;
-    color: #000;
-    text-align: center;
-    padding: 0.5rem;
+.schedule__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
 }
 
+.schedule__table th,
+.schedule__table td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+    font-size: 1.05rem;
+}
+
+.schedule__table th {
+    background-color: #7597E6;
+    color: #fff;
+}
+
+/* FOOTER STYLING */
+.footer {
+    background-color: #ffeb00;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    height: 20vh;
+    position: relative;
+    padding: 0.75rem 0;
+}
+
+.footer__img {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    right: 1rem;
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    font-family: 'FancyFont', Arial, sans-serif;
+}
+
+/* RESULTS PAGE */
 .results {
     background-color: #f4f6f9;
     padding: 4rem 2rem;
@@ -119,6 +213,7 @@ body {
     font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
+    font-family: 'FancyFont', Arial, sans-serif;
 }
 
 .results__table {
@@ -137,6 +232,7 @@ body {
 .results__table th {
     background-color: #7597E6;
     color: #000;
+    font-weight: 600;
 }
 
 .results__table tr:nth-child(even) {
@@ -147,6 +243,7 @@ body {
     background-color: #d0d4e8;
 }
 
+/* SQUAD PAGE */
 .squad {
     padding: 4rem 2rem;
     background-color: #f4f6f9;
@@ -166,25 +263,28 @@ body {
     padding: 1rem;
     width: 140px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .player-card:hover {
-    transform: translateScale(1.5);
+    transform: translateY(-8px);
     box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 
 .player-card__photo {
     width: 100%;
     margin: 0;
+    border-radius: 4px;
 }
 
 .player-card__name {
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 0;
+    margin: 0.5rem 0 0 0;
 }
 
 .player-card__role {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #555;
+    margin: 0.25rem 0 0 0;
 }

@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportsTeam | Home</title>
+    <title>Krusty Krab | Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header__container">
-            <h1 class="header__title">SportsTeam</h1>
+            <div class="header__brand">
+                <img src="images/icon.svg" alt="Krusty Krab Logo" class="header__icon">
+                <h1 class="header__title">Krusty Krab</h1>
+            </div>
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Home</a></li>
@@ -27,11 +34,14 @@
     <main class="main">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero__content">
-                <h2 class="hero__title">Welcome to the official fan website for SportsTeam!</h2>
-                <p class="hero__text">
-                    Hier moet nog wat komen.
-                </p>
+            <div class="hero__container">
+                <div class="hero__content">
+                    <h2 class="hero__title">Welcome to the Krusty Krab Fry Cook Team!</h2>
+                    <p class="hero__text">
+                        Join SpongeBob, Patrick, and the rest of our fry cook team as they compete in the legendary Fry Cook Games!  
+                        Stay updated with team stats, match results, and exclusive behind-the-scenes stories from Bikini Bottom.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -40,15 +50,51 @@
             <div class="about__container">
                 <h2 class="about__title">About the Team</h2>
                 <p class="about__text">
-                    Hier moet nog wat komen.
+                    The Krusty Krab Fry Cook Team is led by our very own SpongeBob SquarePants, the fastest fry cook in all of Bikini Bottom.  
+                    Our team has been participating in the Fry Cook Games for years, aiming to bring home the golden spatula trophy!  
+                    From secret Krabby Patty recipes to heroic teamwork, our team is ready to take on any challenge.
                 </p>
             </div>
         </section>
+
+        <section class="schedule">
+            <div class="schedule__container">
+                <h2 class= "schedule__title">Upcoming Fry Cook Games</h2>
+                <table class="schedule__table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Event</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Feb 20, 2026</td>
+                            <td>Spatula Sprint</td>
+                            <td>Bikini Bottom Stadium</td>
+                        </tr>
+                        <tr>
+                            <td>Feb 25, 2026</td>
+                            <td>Krabby Patty Flip Challenge</td>
+                            <td>Krusty Krab Arena</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 1, 2026</td>
+                            <td>Seaweed Relay</td>
+                            <td>Goo Lagoon Field</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 SportsTeam | Made by fans</p>
+        <p>&copy; 2026 Krusty Krab | Home of the Krabby Patty</p>
+        <img src="images/spongebob.jpg" alt="SpongeBob" class="footer__img">
     </footer>
 </body>
 </html>
