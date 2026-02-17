@@ -26,8 +26,8 @@ body {
 
 /* HEADER STYLING */
 .header {
-    background-color: #7597E6;
-    color: #000;
+    background-color: #ce2d38;
+    color: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -52,20 +52,28 @@ body {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     display: block;
-    margin: -0.5rem 0;
+    margin: -0.5rem 0; /* negative margin because the image has some built-in padding */
 }
 
 .header__title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin: 0;
     white-space: nowrap;
     font-family: 'FancyFont', Arial, sans-serif;
 }
 
+.header-separator svg {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 /* NAVIGATION */
 .nav {
     margin-left: auto;
+    padding-right: 1rem;
     font-family: 'FancyFont', Arial, sans-serif;
 }
 
@@ -83,7 +91,7 @@ body {
 
 .nav__link {
     text-decoration: none;
-    color: #000;
+    color: white;
     font-weight: 500;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid transparent;
@@ -113,26 +121,38 @@ body {
 /* Generic Section Styles */
 .hero,
 .about,
-.schedule {
+.restaurant,
+.schedule,
+.history,
+.squad,
+.results {
     padding: 1rem 2rem;
     text-align: left;
     border-radius: 8px;
 }
 
-.hero {
+.hero,
+.restaurant{
     background-color: #7597E6;
     color: white;
 }
 
 .about,
-.schedule {
+.schedule,
+.history,
+.squad,
+.results {
     background-color: #f4f6f9;
 }
 
 /* Generic Container */
 .hero__container,
 .about__container,
-.schedule__container {
+.restaurant__container,
+.schedule__container,
+.history__container,
+.squad__container,
+.results__container {
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -140,35 +160,86 @@ body {
 /* Generic Titles */
 .hero__title,
 .about__title,
-.schedule__title {
+.restaurant__title,
+.schedule__title,
+.history__title,
+.squad__title,
+.results__title {
     margin-bottom: 1rem;
     font-size: 2rem;
     font-family: 'FancyFont', Arial, sans-serif;
 }
 
 .hero__text,
-.about__text {
+.about__text,
+.restaurant__text,
+.history__text {
     font-size: 1.05rem;
     line-height: 1.6;
 }
 
-.schedule__table {
+.history__subtitle {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-family: 'FancyFont', Arial, sans-serif;
+    color: #ce2d38;
+}
+
+.history__list {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+
+.history__list li {
+    margin-bottom: 0.5rem;
+}
+
+.schedule__table,
+.results__table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
 }
 
 .schedule__table th,
-.schedule__table td {
+.schedule__table td,
+.results__table th,
+.results__table td {
     border: 1px solid #ccc;
     padding: 0.5rem;
     text-align: left;
     font-size: 1.05rem;
 }
 
-.schedule__table th {
+.schedule__table th,
+.results__table th {
     background-color: #7597E6;
     color: #fff;
+}
+
+/* RESULTS PAGE */
+.results__table tr:nth-child(even) {
+    background-color: #e9ecef;
+}
+
+.results__stats {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: #ffeb00;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'FancyFont', Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.results__stats ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.results__stats li {
+    margin-bottom: 0.5rem;
 }
 
 /* FOOTER STYLING */
@@ -198,49 +269,6 @@ body {
     font-size: 0.9rem;
     opacity: 0.75;
     font-family: 'FancyFont', Arial, sans-serif;
-}
-
-/* RESULTS PAGE */
-.results {
-    background-color: #f4f6f9;
-    padding: 4rem 2rem;
-    border-radius: 8px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.results__title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-family: 'FancyFont', Arial, sans-serif;
-}
-
-.results__table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    font-size: 1rem;
-}
-
-.results__table th,
-.results__table td {
-    padding: 0.75rem 1rem;
-    border: 1px solid #ccc;
-}
-
-.results__table th {
-    background-color: #7597E6;
-    color: #000;
-    font-weight: 600;
-}
-
-.results__table tr:nth-child(even) {
-    background-color: #e9ecef;
-}
-
-.results__table tr:hover {
-    background-color: #d0d4e8;
 }
 
 /* SQUAD PAGE */
@@ -287,4 +315,19 @@ body {
     font-size: 0.9rem;
     color: #555;
     margin: 0.25rem 0 0 0;
+}
+
+.player-card__desc {
+    margin-top: 0.75rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Wordt zichtbaar bij hover */
+.player-card:hover .player-card__desc {
+    opacity: 1;
+    color: black;
+    max-height: 200px;
 }

@@ -1,0 +1,1 @@
+Disclaimer: All text, information and results have been created by AI.
